@@ -4,7 +4,7 @@ const port = 3000
 const chatgpt = require('./routes/chatgpt');
 
 // routes
-app.post('/chatgtp/getResults/',chatgpt.getResults);
+app.post('/chatgpt/getResults/',chatgpt.getResults);
 
 app.use('/',express.static('dist'));
 
