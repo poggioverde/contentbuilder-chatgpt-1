@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>ChatGTP Content Block</head>
+    <body>
+        <!-- form -->
+        <form>
+            Prompt: <input type="text" id="txt-prompt"><br/>
+            Variations:  <input type="text" id="txt-variations"><br/>
+            <input type="submit" id="btn-generate" value="Generate Variations">
+        </form>
+        <!--/ form -->
+        <!-- results -->
+        <div id="pnl-results" style="display:none">
+            <h1>Results</h1>
+            <ul id="lst-results"></ul>
+            <p><a href="javascript:void(0)" id="btn-use-results">Use suggestions</a></p>
+        </div>
+        <!--/ results -->
+        <!-- le scripts -->
+        <script src="/dist/lib/jquery.min.js"></script>
+        <script src="/dist/lib/blocksdk.js"></script>
+        <!--/ le scripts -->
+    </body>
+</html>
