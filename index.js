@@ -1,8 +1,10 @@
 const express = require('express')
-var bodyParser  = require('body-parser');
-const app = express()
-const port = 3000
+const bodyParser  = require('body-parser');
+const app = express();
+const http = require('http');
 const chatgpt = require('./routes/chatgpt');
+
+app.set('port', process.env.PORT || 3000);
 
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 app.use(bodyParser.json({ type: 'application/json', limit: '50mb', extended: true }));
@@ -11,6 +13,6 @@ app.post('/chatgpt/getResults/',chatgpt.getResults);
 
 app.use('/',express.static('dist'));
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
+});
