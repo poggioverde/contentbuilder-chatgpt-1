@@ -1,7 +1,6 @@
 const request = require('request');
 
 exports.getResults = function(req, res) {
-    return new Promise(function(resolve, reject) {
         request({
             url: 'https://api.openai.com/v1/completions',
             method: 'POST',
@@ -14,12 +13,12 @@ exports.getResults = function(req, res) {
                 "prompt": req.body.prompt,
                 "max_tokens": 256,
                 "temperature": 0.5,
-                "n": req.body.variations
+                "n": parseInt(req.body.variations) 
             },
         }, (err, response, body) => {
             if (err)
-                reject(JSON.stringify(err));
-            resolve(body);
-        })
-    });
+                return res.status(500).send(err);
+   
+            return res.status(200).send(body);
+        });
 }

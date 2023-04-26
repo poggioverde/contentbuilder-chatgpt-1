@@ -1,7 +1,9 @@
 $(function(){
 
-    $('#btn-generate').on("click",function(){
-       
+    $('#btn-generate').on("click",function(event){
+        
+        event.preventDefault();
+
         $('#pnl-results').hide();
         
         $.ajax({
