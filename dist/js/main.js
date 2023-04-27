@@ -1,8 +1,8 @@
+var chatgptResults = [];
+var promptVar,variationsVar,tagVar;
+
 $(function(){
     var sdk = new SDK();
-    var chatgptResults = [];
-    var promptVar,variationsVar,tagVar;
-
     $('#btn-generate').on("click",function(event){
         
         event.preventDefault();
