@@ -12,7 +12,7 @@
                 "<node_internals>/**"
             ],
             "env":{
-                "CHATGTP_KEY" :"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"
+                "CHATGTP_KEY" :"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"
             },
             "program": "${workspaceFolder}\\index.js"
         }
