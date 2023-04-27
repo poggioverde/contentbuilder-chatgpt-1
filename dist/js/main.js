@@ -52,20 +52,14 @@ $(function(){
         });
 
         var contentBlockContent = '<script runat=server> \
-            Platform.Load("Core","1"); \
-            try{ \
-                    \
-                    var generatedContentRows = ['+generateResultsArray()+']; \
-                    var variation = Math.floor(Math.random() * '+ variationsVar +'); \
-                    var text = generatedContentRows[variation]; \
-                    Variable.SetValue("@generatedContent", text); \
-                    Variable.SetValue("@generatedContentAlias", "'+ tagVar +'" + "-" + (variation+1)); \
-                    } \
-                catch(e){ \
-                Variable.SetValue("@generatedContent","' +promptVar+'"); \
-                Variable.SetValue("@generatedContentAlias","'+ tagVar + '" + "-default"); \
-                } \
-        </script> \
+            Platform.Load("Core","1"); \n \
+            \n\
+                    var generatedContentRows = ['+generateResultsArray()+']; \n\
+                    var variation = Math.floor(Math.random() * '+ variationsVar +'); \n\
+                    var text = generatedContentRows[variation]; \n\
+                    Variable.SetValue("@generatedContent", text); \n\
+                    Variable.SetValue("@generatedContentAlias", "'+ tagVar +'" + "-" + (variation+1)); \n\
+        </script> \n\
         %%=v(@generatedContent)=%%';
         
         sdk.setContent(contentBlockContent);
