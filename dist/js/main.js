@@ -55,7 +55,7 @@ $(function(){
             Platform.Load("Core","1"); \
             try{ \
                     \
-                    var generatedContentRows = ['+chatgptResults.join(", ")+']; \
+                    var generatedContentRows = ['+generateResultsArray()+']; \
                     var variation = Math.floor(Math.random() * '+ variationsVar +'); \
                     var text = generatedContentRows[variation]; \
                     Variable.SetValue("@generatedContent", text); \
@@ -73,3 +73,13 @@ $(function(){
     });
 
 })
+
+function generateResultsArray(){
+    var textArray = '';
+    for (let index = 0; index < chatgptResults.length; index++) {
+        textArray += '"'+chatgptResults[index].trim()+'"';
+        if(index < chatgptResults.length - 1)
+            textArray += ',';
+    }
+    return textArray;
+}
