@@ -55,7 +55,7 @@ $(function(){
             Platform.Load("Core","1"); \
             try{ \
                     \
-                    var generatedContentRows = ['+generateResultsArray()+']; \
+                    var generatedContentRows = ['+chatgptResults.join(", ")+']; \
                     var variation = Math.floor(Math.random() * '+ variationsVar +'); \
                     var text = generatedContentRows[variation]; \
                     Variable.SetValue("@generatedContent", text); \
@@ -66,20 +66,10 @@ $(function(){
                 Variable.SetValue("@generatedContentAlias","'+ tagVar + '" + "-default"); \
                 } \
         </script> \
-        %%=v(generatedContent)=%%';
+        %%=v(@generatedContent)=%%';
         
         sdk.setContent(contentBlockContent);
 
     });
 
 })
-
-function generateResultsArray(){
-    var textArray = '';
-    for (let index = 0; index < chatgptResults.length; index++) {
-        textArray += '"'+chatgptResults[index]+'"';
-        if(index < chatgptResults.length - 1)
-            textArray += ',';
-    }
-    return textArray;
-}
