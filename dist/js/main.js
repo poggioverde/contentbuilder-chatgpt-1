@@ -1,6 +1,7 @@
 $(function(){
     var sdk = new SDK();
     var chatgptResults = [];
+    var promptVar,variationsVar,tagVar;
 
     $('#btn-generate').on("click",function(event){
         
@@ -8,9 +9,9 @@ $(function(){
 
         $('#pnl-results').hide();
 
-        var promptVar = $('#txt-prompt').val();
-        var variationsVar = $('#txt-variations').val();
-        var tagVar = $('#txt-tag').val();
+        promptVar = $('#txt-prompt').val();
+        variationsVar = $('#txt-variations').val();
+        tagVar = $('#txt-tag').val();
 
         $.ajax({
             url: '/chatgpt/getResults',
