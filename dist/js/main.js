@@ -3,6 +3,15 @@ var promptVar,variationsVar,tagVar;
 
 $(function(){
     var sdk = new SDK();
+    this.sdk = new BlockSDK({
+        blockEditorWidth: 600,
+        tabs: [
+            { key: 'config', url: `${window.location.origin}`, name: 'Configuration' }, // This is a custom tab
+            'htmlblock', // This is the HTML Editor Tab
+            'stylingblock' // This is the styling tab
+        ]
+    });
+
     $('#btn-generate').on("click",function(event){
         
         event.preventDefault();
