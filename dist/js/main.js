@@ -58,6 +58,9 @@ $(function(){
                     var variation = Math.floor(Math.random() * '+ variationsVar +'); \n\
                     var text = generatedContentRows[variation]; \n\
                     Variable.SetValue("@generatedContent", text); \n\
+                    if(variation == 0) \n\
+                    Variable.SetValue("@generatedContentAlias", "'+ tagVar +'" + "-default"); \n\
+                    else \n\
                     Variable.SetValue("@generatedContentAlias", "'+ tagVar +'" + "-" + (variation+1)); \n\
         </script> \n\
         %%=v(@generatedContent)=%%';
@@ -69,7 +72,7 @@ $(function(){
 })
 
 function generateResultsArray(){
-    var textArray = '';
+    var textArray = '"'+promptVar+'",';
     for (let index = 0; index < chatgptResults.length; index++) {
         textArray += '"'+chatgptResults[index].trim()+'"';
         if(index < chatgptResults.length - 1)
