@@ -51,7 +51,7 @@ $(function(){
             tag : tagVar
         });
 
-        var contentBlockContent = '<script runat=server> \
+        var contentBlockContent = '<script runat=server> \n\
             Platform.Load("Core","1"); \n \
             \n\
                     var generatedContentRows = ['+generateResultsArray()+']; \n\
