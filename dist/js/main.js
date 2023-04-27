@@ -55,7 +55,7 @@ $(function(){
                     } \
                 catch(e){ \
                 Variable.SetValue("@generatedContent","' +promptVar+'"); \
-                Variable.SetValue("@generatedContentAlias",'+ tagVar + '"-default"); \
+                Variable.SetValue("@generatedContentAlias","'+ tagVar + '"-default"); \
                 } \
         </script> \
         %%=v(generatedContent)=%%';
