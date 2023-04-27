@@ -67,7 +67,7 @@ $(function(){
 })
 
 function generateResultsArray(){
-    var textArray;
+    var textArray = '';
     for (let index = 0; index < chatgptResults.length; index++) {
         textArray += '"'+chatgptResults[index]+'"';
         if(index < chatgptResults.length - 1)
