@@ -2,8 +2,7 @@ var chatgptResults = [];
 var promptVar,variationsVar,tagVar;
 
 $(function(){
-    var sdk = new SDK();
-    this.sdk = new BlockSDK({
+    var sdk = new SDK({
         blockEditorWidth: 600,
         tabs: [
             { key: 'config', url: `${window.location.origin}`, name: 'Configuration' }, // This is a custom tab
