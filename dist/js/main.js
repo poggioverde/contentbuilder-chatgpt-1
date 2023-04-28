@@ -43,7 +43,7 @@ $(function(){
                 chatgptResults = [];
                 results.choices.forEach(choice => {
                     var resultText = choice.text.replace('"','');
-                    $('#lst-results').append('<li>' + resultText + '</li>');
+                    $('#lst-results').append('<li class="slds-item">' + resultText + '</li>');
                     chatgptResults.push(resultText);
                     $('#pnl-results').show();
                     $('#spinner').hide();
