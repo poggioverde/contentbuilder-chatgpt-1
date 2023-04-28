@@ -14,6 +14,7 @@ $(function(){
         
         event.preventDefault();
 
+        $('#spinner').show();
         $('#pnl-results').hide();
 
         promptVar = $('#txt-prompt').val();
@@ -34,6 +35,7 @@ $(function(){
                     $('#lst-results').append('<li>' + resultText + '</li>');
                     chatgptResults.push(resultText);
                     $('#pnl-results').show();
+                    $('#spinner').hide();
                 });
             }
         });
