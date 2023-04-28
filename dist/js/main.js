@@ -10,6 +10,17 @@ $(function(){
         ]
     });
 
+    sdk.getData(function (data) {
+        promptVar = data.prompt;
+        chatgptResults = data.results;
+        variationsVar = data.variations;
+        tagVar = data.tag; 
+
+        $('#txt-prompt').val(promptVar);
+        $('#txt-variations').val(variationsVar);
+        $('#txt-tag').val(tagVar);
+    });
+
     $('#btn-generate').on("click",function(event){
         
         event.preventDefault();
